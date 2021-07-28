@@ -7,3 +7,5 @@ const obtieneProductos = async(req, res) => {
     console.log(productos);
     res.render('productos', {productos});
 }
+
+module.exports = router;
