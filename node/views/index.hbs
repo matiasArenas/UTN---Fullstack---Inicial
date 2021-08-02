@@ -1,2 +1,62 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">El Centro Mueblería</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Living
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/categoria/living/recibidores">Recibidores</a></li>
+                        <li><a class="dropdown-item" href="/categoria/living/sillones/{{id}}">Sillones</a></li>
+                        <li><a class="dropdown-item" href="/categoria/living/mesas/{{id}}">Mesas</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Cocina/comedor
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/categoria/cocina/mesas">Mesas y sillas</a></li>
+                        <li><a class="dropdown-item" href="/categoria/cocina/arrime">Mesas de arrime</a></li>
+                        <li><a class="dropdown-item" href="/categoria/cocina/vitrinas">Vajilleros/Vitrinas</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Dormitorio
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/categoria/dormitorio/comodas">C&oacute;modas/Cajoneras</a></li>
+                        <li><a class="dropdown-item" href="/categoria/dormitorio/mesas">Mesas de luz</a></li>
+                        <li><a class="dropdown-item" href="/categoria/dormitorio/roperos">Roperos/Otros</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Oficina
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/categoria/oficina/escritorios">Escritorios</a></li>
+                        <li><a class="dropdown-item" href="/categoria/oficina/bibliotecas">Bibliotecas</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contactanos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Quienes somos?</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
