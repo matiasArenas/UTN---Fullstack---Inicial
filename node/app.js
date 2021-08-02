@@ -5,10 +5,21 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const registroUser = require('./routes/registro');
+const quienesSomos = require('./routes/conocenos');
 const contactoRouter = require('./routes/contacto');
-const productoRouter = require('./routes/producto');
-const registroUser = require('./routes/producto');
+const cocinaMesas = require('./routes/categoria/cocina/mesas');
+const cocinaArrime = require('./routes/categoria/cocina/arrime');
+const cocinaVitrinas = require('./routes/categoria/cocina/vitrinas');
+const dormitorioMesas = require('./routes/categoria/dormitorio/mesas');
+const dormitorioComodas = require('./routes/categoria/dormitorio/comodas');
+const dormitorioRoperos = require('./routes/categoria/dormitorio/roperos');
+const livingMesas = require('./routes/categoria/living/mesas');
+const livingRecibidores = require('./routes/categoria/living/recibidores');
+const livingSillones = require('./routes/categoria/living/sillones');
+const oficinaBibliotecas = require('./routes/categoria/oficina/bibliotecas');
+const oficinaEscritorios = require('./routes/categoria/oficina/escritorios');
+
 const app = express();
 
 // view engine setup
@@ -21,12 +32,24 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Rutas principales
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/contacto',contactoRouter);
-app.use('/productos',productoRouter);
 app.use('/registro',registroUser);
+app.use('/quienes-somos', quienesSomos);
 
+//Rutas categorías
+app.use('/categoria/cocina/mesas',cocinaMesas);
+app.use('/categoria/cocina/arrime',cocinaArrime);
+app.use('/categoria/cocina/vitrinas',cocinaVitrinas);
+app.use('/categoria/dormitorio/mesas',dormitorioMesas);
+app.use('/categoria/dormitorio/comodas',dormitorioComodas);
+app.use('/categoria/dormitorio/roperos',dormitorioRoperos);
+app.use('/categoria/living/mesas',livingMesas);
+app.use('/categoria/living/recibidores',livingRecibidores);
+app.use('/categoria/living/sillones',livingSillones);
+app.use('/categoria/oficina/bibliotecas',oficinaBibliotecas);
+app.use('/categoria/oficina/escritorios', oficinaEscritorios);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
