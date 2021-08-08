@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const indexRouter = require('./routes/index');
 const registroUser = require('./routes/registro');
-const quienesSomos = require('./routes/conocenos');
+const login = require('./routes/login');
 const contactoRouter = require('./routes/contacto');
 const cocinaMesas = require('./routes/cocina-mesas');
 const cocinaArrime = require('./routes/cocina-arrime');
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/contacto',contactoRouter);
 app.use('/registro',registroUser);
-app.use('/quienes-somos', quienesSomos);
+app.use('/login', login);
 
 //Rutas categorías
 app.use('/cocina-mesas',cocinaMesas);

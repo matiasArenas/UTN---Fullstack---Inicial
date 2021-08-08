@@ -16,9 +16,6 @@ const sendContacto = async ({ mail, asunto, cuerpo, from }) => {
       html: cuerpo,
     }; 
     const { messageId } = await transporter.sendMail(info);
-    console.log('TRANSPORTER',transporter);
-    console.log('INFO',info)
-    console.log('MESSAGEID',messageId);
     return messageId;
   } catch (e) {
     console.error(e);
