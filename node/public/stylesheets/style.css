@@ -2,20 +2,74 @@ body {
   margin: 0;
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width:100%;
+  height: 100%;
 }
 
 .seccion1-index{
-  background-color:blue;
+  background-color: #dac0d6;
   width:100%;
   padding:32px;
+  border:2px solid #cacaca;
 }
 .seccion2-index{
-  background-color:green;
+  background-color: #dac0d6;
   width:100%;
   padding:32px;
+  border:2px solid #cacaca;
+  display: flex;
+  justify-content: space-between;
 }
-.seccion3-index{
-  background-color:greenyellow;
+.footer{
+  background-color: #dac0d6;
   width:100%;
-  padding:32px;
+  width: 100%;
+  border:2px solid #cacaca;
+  padding: 54px;
+}
+
+.card{
+  background-color: #37072f  !important;
+  color:#cacaca;
+  border: solid 4px #dac0d6 !important;
+  border-radius: 4px;
+}
+
+.card-link{
+  color:#cacaca;
+}
+
+.card-link:hover{
+  background-color: #37072f  !important;
+}
+
+.mb-prod{
+  margin-bottom:24px
+}
+
+.bg-violet{
+  background-color: #dac0d6  !important;
+}
+
+.titulo-producto{
+  text-align: inherit;
+  color:#333131;
+}
+
+.contenedor-principal-contacto{
+  padding: 24px 300px 16px 300px;
+  width: 100%;
+}
+
+.titulo{
+  padding-left: 300px;
+}
+
+.large-button{
+  padding: 8px 324px 8px 316px !important;
+  box-sizing: content-box !important;
+  background-color:#37072f !important;
+  color:#cacaca !important;
+  border: 4px solid #dac0d6 !important;
+  border-radius: 4px !important;
 }

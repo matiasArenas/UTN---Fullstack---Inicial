@@ -8,6 +8,5 @@ let pool = mysql.createPool({
     port: process.env.DB_PORT || 3306,
     database: process.env.DB_DATABASE || 'proyecto-muebleria',
 });
- console.log('conexionBD',pool);
 pool.query = util.promisify(pool.query);
 module.exports = pool;

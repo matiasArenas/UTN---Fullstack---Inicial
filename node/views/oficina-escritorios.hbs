@@ -65,31 +65,35 @@
     </div>
 </nav>
 
-<div class="container contenedor-principal-contacto">
-    <div class="titulo">
-        <h2>Escriba aquí su consulta</h2>
-        <h4>Le responderemos a la brevedad.</h4>
+<div class="container mt-16">
+    <div class="mt-4 mb-prod">
+        <h2 class="titulo-producto">
+            Escritorios para oficinas
+        </h2>
     </div>
-    <form class="contenedor-principal-contacto" action="/contacto">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control focus-input" id="exampleFormControlInput1" placeholder="Escriba aquí su email">
+    <div class=" container-fluid d-inline-flex flex-wrap">
+        {{#each productos}}
+        <div class="card" style="width: 18rem;margin-bottom: 8px;margin-right: 8px;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <ul>
+                    <li>
+                        {{nombreProd}}
+                    </li>
+                    <li>
+                        {{precioLaqueado}}
+                    </li>
+                </ul>
+                <div>
+                    <p>
+                        {{descripcionProd}}
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Asunto</label>
-            <input type="text" name="asunto" class="form-control focus-input" id="exampleFormControlInput1"
-                placeholder="Escriba aquí un título para su consulta">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Consulta</label>
-            <textarea class="form-control focus-input" name="cuerpo" id="exampleFormControlTextarea1" rows="3" maxlength="250"
-                placeholder="Escriba aquí su consulta"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg large-button">Enviar</button>
-        <p>{{message}}</p>
-    </form>
+        {{/each}}
+    </div>
 </div>
-
 <div class=" container-fluid text-center text-md-left footer mt-4 d-flex">
     <div class="container">
         <h4>Visitanos en nuestro local</h4>
