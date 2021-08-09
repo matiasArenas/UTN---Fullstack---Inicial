@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const sendContacto = async ({ mail, asunto, cuerpo, from }) => {
+const send = async ({ mail, asunto, cuerpo, from }) => {
   try {
     const transporter = nodemailer.createTransport({
       service: process.env.MAIL_SERVICE,
@@ -22,4 +22,4 @@ const sendContacto = async ({ mail, asunto, cuerpo, from }) => {
   }
 };
 
-module.exports = { sendContacto };
+module.exports = { send };

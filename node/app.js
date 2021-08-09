@@ -4,6 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv');
+const {validateEmailContacto} = require('./middlewares/clientesValidate');
+const {validateRegistro} = require('./middlewares/registroValidate');
 
 dotenv.config();
 const indexRouter = require('./routes/index');
@@ -36,9 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas principales
 app.use('/', indexRouter);
-app.use('/contacto',contactoRouter);
-app.use('/registro',registroUser);
+app.use('/contacto',validateEmailContacto,contactoRouter);
 app.use('/login', login);
+app.use('/registro',validateRegistro,registroUser);
+//app.use('/login',ValidateLogin, login);
 
 //Rutas categorías
 app.use('/cocina-mesas',cocinaMesas);

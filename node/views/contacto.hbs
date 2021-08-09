@@ -70,7 +70,7 @@
         <h2>Escriba aquí su consulta</h2>
         <h4>Le responderemos a la brevedad.</h4>
     </div>
-    <form class="contenedor-principal-contacto" action="/contacto">
+    <form class="contenedor-principal-contacto" action="/contacto" method="POST">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email</label>
             <input type="email" name="email" class="form-control focus-input" id="exampleFormControlInput1" placeholder="Escriba aquí su email">
@@ -86,7 +86,7 @@
                 placeholder="Escriba aquí su consulta"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-lg large-button">Enviar</button>
-        <p>{{message}}</p>
+        <p class="mt-4">{{message}}</p>
     </form>
 </div>
 

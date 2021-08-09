@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { sendContacto } = require("./../services/mail");
+const { send } = require("./../services/mail");
 
 const renderView = (req, res) => {
   res.render("contacto");
@@ -8,15 +8,15 @@ const renderView = (req, res) => {
 
 const recibeEmailContacto = async (req, res) => {
   const email = req.body;
-  console.log('email',email);
   if (email) {
-    sendContacto({
+    send({
       from: email.email,
       mail: process.env.MAIL_USER,
       asunto: email.asunto,
       cuerpo: email.cuerpo,
     });
     res.render("contacto", {message:"El email se ha enviado correctamente, le responderemos a la brevedad."})
+    console.log('messagesss',message)
   } else {
     res.render("contacto", {
       message:
@@ -25,7 +25,7 @@ const recibeEmailContacto = async (req, res) => {
   }
 };
 
-router.post("/", recibeEmailContacto);
 router.get("/", renderView);
+router.post("/", recibeEmailContacto);
 
 module.exports = router;
