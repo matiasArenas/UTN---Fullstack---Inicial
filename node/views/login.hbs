@@ -65,14 +65,14 @@
     </div>
 </nav>
 
-<div class="container contenedor-principal-contacto">
+<div class="container contenedor-principal-login">
     <div class="titulo">
         <h2>Ingrese su usuario y contrase&ntilde;a</h2>
     </div>
-    <form class="contenedor-principal-contacto" action="/contacto">
+    <form class="contenedor-principal-login" action="/login" method="POST">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control focus-input" id="exampleFormControlInput1" placeholder="Escriba aquí su email">
+            <input type="email" name="emailCliente" class="form-control focus-input" id="exampleFormControlInput1" placeholder="Escriba aquí su email">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Contrase&ntilde;a</label>
@@ -80,6 +80,7 @@
                 placeholder="Escriba aquí un título para su consulta">
         </div>
         <button type="submit" class="btn btn-primary btn-lg large-button-login">Ingresar</button>
+        <p class="mt-4">{{message}}</p>
     </form>
 </div>
 

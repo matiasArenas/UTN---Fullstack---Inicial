@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-violet">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/indexAdmin">Aldea muebles - Vista de administrador</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Gestionar productos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/altaProducto">Alta</a></li>
+                        <li><a class="dropdown-item" href="/modificaEliminaProductos/">Modificacion/Baja</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Vista Cliente</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container contenedor-principal-contacto">
+    <div class="titulo">
+        <h2>Edicion de productos</h2>
+    </div>
+    <form class="contenedor-principal-contacto" action="/registro" method="POST">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Producto</label>
+            <input type="text" name="nombreCliente" value="{{nombreProd}}" class="form-control focus-input" id="exampleFormControlInput1"
+                placeholder="Ingrese su nombre">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+            <input type="text" name="apellidoCliente" class="form-control focus-input" id="exampleFormControlInput1"
+                placeholder="Ingrese su nombre">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">DNI</label>
+            <input type="text" name="dniCliente" class="form-control focus-input" id="exampleFormControlInput1"
+                placeholder="Ingrese su dni sin puntos ni espacios">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Tel&eacute;fono</label>
+            <input type="text" name="telefonoCliente" class="form-control focus-input" id="exampleFormControlInput1"
+                placeholder="Ingrese su dni sin puntos ni espacios">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Direcci&oacute;n</label>
+            <input type="text" name="direccionCliente" class="form-control focus-input" id="exampleFormControlInput1"
+                placeholder="Ingrese su dni sin puntos ni espacios">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="mail" name="mailCliente" class="form-control focus-input" id="exampleFormControlInput1"
+                placeholder="Ingrese su dni sin puntos ni espacios">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Contrase&ntilde;a</label>
+            <input type="password" name="pass" class="form-control focus-input" id="exampleFormControlInput1"
+                placeholder="Escriba aquí un título para su consulta">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg large-button-registro">Registrarse</button>
+        <p class="mt-4">{{message}}</p>
+    </form>
+</div>
+
+<div class=" container-fluid text-center text-md-left footer mt-4 d-flex">
+    <div class="container">
+        <h4>Visitanos en nuestro local</h4>
+        <p>Dirección: San Juan 3500, Rosario, Santa Fé</p>
+        <p>Horarios: De Lunes a Viernes de 10:00 a 13:30 y de 16:30 a 19:30</p>
+    </div>
+    <div class="container">
+        <h4>Contactanos</h4>
+        <p>Pod&eacute;s contactarnos desde la secci&oacute;n contacto</p>
+        <p>O pod&eacute;s enviarnos un mail a contactoaldeamuebles@gmail.com</p>
+    </div>
+</div>

@@ -6,6 +6,19 @@ const getAllLivingRecibidores = async() => {
     return await pool.query(query, params);
 }
 
+const getAllProductos = async() => {
+    const query = "SELECT * FROM ?? WHERE eliminado = 1";
+    const params = [process.env.T_PRODUCTOS];
+    return await pool.query(query, params);
+}
+
+const getSingleProducto = async(idProd) => {
+    const query = "SELECT * FROM ?? WHERE idProd = ?";
+    const params = [process.env.T_PRODUCTOS, idProd];
+    const rows = await pool.query(query, params);
+    return rows;
+}
+
 const getAllLivingMesas = async() => {
     const query = "SELECT p.idProd, p.nombreProd, p.descripcionProd, p.imgProd, p.precioLaqueado FROM ?? AS p JOIN ?? AS c ON p.idCategoria = c.idCategoria AND idSubcategoria = 2";
     const params = [process.env.T_PRODUCTOS, process.env.T_CATEGORIAS];
@@ -66,19 +79,26 @@ const getAllOficinaEscritorio= async() => {
     return await pool.query(query, params);
 }
 
+const deleteProd = async(idProd) => { 
+    try {
+        const query = "UPDATE ?? SET eliminado = 0 WHERE idProd = ?";
+        const params = [process.env.T_PRODUCTOS, idProd];
+        return await pool.query(query, params);
+    } catch(e) {
+        console.log(e);
+    }
+    
+}
 
+const updateProd = async(obj,idProd) => { 
+    try {
+        const query = "UPDATE ?? SET ? WHERE idProd = ?";
+        const params = [process.env.T_PRODUCTOS, obj, idProd];
+        return await pool.query(query, params);
+    } catch(e) {
+        console.log(e);
+    }
+    
+}
 
-// const getSingleProductos = async(id) => {
-//     const query = "SELECT p.nombre, p.id, c.nombre AS nombreCategoria FROM ?? AS p JOIN ?? AS c ON p.id_categoria = c.id WHERE p.id = ?"
-//     const params = [T_PRODUCTOS, T_CATEGORIAS, id];
-//     return await pool.query(query, params);
-// }
-// const crearProducto = async(obj) => {
-//     const query = "INSERT INTO ?? SET ?";
-//     const params = [T_PRODUCTOS, obj];
-//     return await pool.query(query, params);
-// }
-
-// UPDATE ?? SET ? WHERE id = ?
-
-module.exports = {getAllLivingRecibidores, getAllLivingMesas, getAllLivingSillones, getAllCocinaArrime,getAllCocinaMesas, getAllCocinaVitrinas, getAllDormitorioRoperos,getAllDormitorioMesas,getAllDormitorioComodas,getAllOficinaBibliotecas,getAllOficinaEscritorio};
+module.exports = {getAllProductos,getSingleProducto,updateProd,getAllLivingRecibidores, getAllLivingMesas, getAllLivingSillones, getAllCocinaArrime,getAllCocinaMesas, getAllCocinaVitrinas, getAllDormitorioRoperos,getAllDormitorioMesas,getAllDormitorioComodas,getAllOficinaBibliotecas,getAllOficinaEscritorio, deleteProd};

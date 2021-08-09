@@ -16,7 +16,6 @@ const recibeEmailContacto = async (req, res) => {
       cuerpo: email.cuerpo,
     });
     res.render("contacto", {message:"El email se ha enviado correctamente, le responderemos a la brevedad."})
-    console.log('messagesss',message)
   } else {
     res.render("contacto", {
       message:

@@ -91,3 +91,8 @@ body {
   border: 4px solid #dac0d6 !important;
   border-radius: 4px !important;
 }
+
+.contenedor-principal-login{
+  padding: 32px 300px 44px 300px;
+  width: 100%;
+}
